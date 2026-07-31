@@ -1,0 +1,60 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="About - PlanetJonny Astrophotography" description="About Jonny, Oregon dark sky observing sites, and deep-sky astrophotography journey.">
+  
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    
+    <!-- Hero Profile -->
+    <div class="p-8 sm:p-12 rounded-3xl glass-panel border border-white/10 mb-12 relative overflow-hidden">
+      <div class="absolute top-0 right-0 w-80 h-80 bg-cyan-500/10 rounded-full blur-[100px] pointer-events-none"></div>
+      
+      <div class="relative z-10">
+        <span class="text-xs font-mono text-cyan-400 uppercase tracking-widest block mb-2">Astrophotographer Profile</span>
+        <h1 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight mb-6">
+          Clear Skies & <span class="text-gradient">Deep Space</span>
+        </h1>
+        
+        <div class="prose prose-invert max-w-none text-slate-300 text-sm leading-relaxed space-y-4 font-light">
+          <p>
+            Welcome to <strong>PlanetJonny</strong>, my personal digital observatory log and astrophotography portfolio. I specialize in deep-sky long-exposure photography, capturing ancient photons emitted by distant nebulae, stellar nurseries, and spiral galaxies millions of light-years away.
+          </p>
+          <p>
+            Operating primarily out of dark-sky sites across the Pacific Northwest (Oregon, USA), I collect raw light subframes over multiple nights using cooled astronomical CMOS sensors and dedicated refractor optics.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Observing Sites -->
+    <div class="max-w-2xl mx-auto mb-12">
+      <div class="p-6 rounded-2xl glass-panel border border-white/10 text-center">
+        <div class="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 text-lg mb-4 mx-auto">
+          🏡
+        </div>
+        <h3 class="text-lg font-bold text-white mb-2">Eugene, Oregon Backyard Observatory</h3>
+        <p class="text-xs text-slate-400 leading-relaxed mb-4">
+          Primary imaging location operating out of Eugene, Oregon. Utilizing narrowband filters (H-Alpha and OIII) and long integration times to cut through suburban light pollution.
+        </p>
+        <span class="px-3 py-1 rounded-full text-[11px] font-mono bg-cyan-500/10 text-cyan-300 border border-cyan-500/30 inline-block">
+          Bortle Class 6 Site
+        </span>
+      </div>
+    </div>
+
+    <!-- Contact & Social Footer -->
+    <div class="p-8 rounded-2xl glass-panel border border-white/10 text-center">
+      <h3 class="text-lg font-bold text-white mb-2">Connect & Inquiries</h3>
+      <p class="text-xs text-slate-400 mb-6">Have questions regarding capture processing, subframe acquisition, or equipment recommendations?</p>
+      
+      <div class="flex items-center justify-center space-x-4">
+        <a href="mailto:jonny@planetjonny.com" class="px-5 py-2.5 rounded-xl bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 text-xs font-mono hover:bg-cyan-500/30 transition-colors">
+          ✉️ Email Contact
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+</Layout>

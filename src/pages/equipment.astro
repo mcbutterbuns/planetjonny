@@ -1,0 +1,189 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const telescopes = [
+  {
+    name: "Apertura CarbonStar 150",
+    type: "Imaging Newtonian Reflector",
+    aperture: '150mm / 5.9" (Focal Length 600mm, f/4)',
+    primaryUse: "Fast Deep-Sky Nebulae & Widefield Targets",
+    description:
+      "Features a lightweight carbon fiber tube (10.4 lbs) engineered to eliminate thermal focus drift, paired with fast f/4 optics for high-throughput deep-sky imaging.",
+  },
+  {
+    name: "Sky-Watcher Evostar 80ED APO",
+    type: "Apochromatic Doublet Refractor",
+    aperture: '80mm / 3.1" (Focal Length 600mm, f/7.5)',
+    primaryUse: "Widefield Deep-Sky Nebulae & Star Clusters",
+    description:
+      "Features FPL-53 extra-low dispersion (ED) synthetic fluorite glass matched with Schott BK-7 glass to virtually eliminate chromatic aberration and deliver high-contrast star fields.",
+  },
+];
+
+const cameras = [
+  {
+    name: "ZWO ASI1600MM Pro",
+    sensor: '4/3" Panasonic MN34230 Mono CMOS',
+    type: "Primary Cooled Mono Camera",
+    specs:
+      "16 Megapixels • 3.8µm Pixels • 12-bit ADC • -45°C Delta Cooling • Built-in DDR3 Buffer",
+  },
+  {
+    name: "ZWO ASI120MM Mini",
+    sensor: '1/3" AR0130CS Mono CMOS',
+    type: "Autoguiding & Planetary Camera",
+    specs:
+      '1.2 Megapixels • 3.75µm Pixels • USB 2.0 / ST4 Guide Port • Compact 1.25" Form Factor',
+  },
+];
+
+const mounts = [
+  {
+    name: "ZWO AM5n Harmonic Drive",
+    payload: "28 lbs without counterweights",
+    type: "Strain Wave Gear Robotic Mount",
+    notes:
+      "Ultra-portable harmonic drive mount for remote dark-sky field sessions.",
+  },
+];
+---
+
+<Layout
+  title="Equipment Setup - PlanetJonny Astrophotography"
+  description="Telescopes, CCD/CMOS cameras, equatorial mounts, filters, and processing software used for capturing deep-sky astrophotography."
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <!-- Header -->
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <h1 class="text-4xl font-extrabold text-white tracking-tight mb-4">
+        Observatory & <span class="text-gradient">Gear Setup</span>
+      </h1>
+      <p class="text-slate-300 text-sm leading-relaxed">
+        A breakdown of the optical telescopes, cooled CMOS cameras, robotic
+        mounts, and software tools powering PlanetJonny.
+      </p>
+    </div>
+
+    <!-- Telescopes Section -->
+    <section class="mb-16">
+      <h2
+        class="text-xl font-bold text-white mb-6 flex items-center space-x-2 border-b border-white/10 pb-3"
+      >
+        <span class="text-cyan-400">🔭</span>
+        <span>Optical Tubes & Telescopes</span>
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {
+          telescopes.map((scope) => (
+            <div class="p-6 rounded-2xl glass-panel glass-panel-hover flex flex-col justify-between">
+              <div>
+                <span class="text-[11px] font-mono text-cyan-400 uppercase tracking-wider block mb-1">
+                  {scope.type}
+                </span>
+                <h3 class="text-lg font-bold text-white mb-2">{scope.name}</h3>
+                <p class="text-xs text-slate-400 mb-4 leading-relaxed">
+                  {scope.description}
+                </p>
+              </div>
+              <div class="pt-4 border-t border-white/5 text-[11px] font-mono space-y-1 text-slate-300">
+                <div>
+                  <span class="text-slate-400">Aperture:</span> {scope.aperture}
+                </div>
+                <div>
+                  <span class="text-slate-400">Target Type:</span>{" "}
+                  {scope.primaryUse}
+                </div>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </section>
+
+    <!-- Cameras Section -->
+    <section class="mb-16">
+      <h2
+        class="text-xl font-bold text-white mb-6 flex items-center space-x-2 border-b border-white/10 pb-3"
+      >
+        <span class="text-cyan-400">📷</span>
+        <span>Imaging Cameras</span>
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {
+          cameras.map((cam) => (
+            <div class="p-6 rounded-2xl glass-panel glass-panel-hover flex flex-col justify-between">
+              <div>
+                <span class="text-[11px] font-mono text-purple-400 uppercase tracking-wider block mb-1">
+                  {cam.type}
+                </span>
+                <h3 class="text-lg font-bold text-white mb-2">{cam.name}</h3>
+                <p class="text-xs text-slate-300 mb-4 font-mono">
+                  {cam.sensor}
+                </p>
+              </div>
+              <div class="pt-4 border-t border-white/5 text-[11px] font-mono text-cyan-400">
+                {cam.specs}
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </section>
+
+    <!-- Mounts Section -->
+    <section class="mb-16">
+      <h2
+        class="text-xl font-bold text-white mb-6 flex items-center space-x-2 border-b border-white/10 pb-3"
+      >
+        <span class="text-cyan-400">⚙️</span>
+        <span>Equatorial Mounts & Tracking</span>
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {
+          mounts.map((mount) => (
+            <div class="p-6 rounded-2xl glass-panel glass-panel-hover">
+              <span class="text-[11px] font-mono text-amber-400 uppercase tracking-wider block mb-1">
+                {mount.type}
+              </span>
+              <h3 class="text-xl font-bold text-white mb-2">{mount.name}</h3>
+              <p class="text-xs text-slate-300 mb-4 leading-relaxed">
+                {mount.notes}
+              </p>
+              <div class="text-xs font-mono text-slate-400">
+                Payload Capacity:{" "}
+                <span class="text-cyan-300">{mount.payload}</span>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </section>
+
+    <!-- Software Stack -->
+    <section>
+      <div
+        class="p-8 rounded-3xl glass-panel border border-cyan-500/20 text-center"
+      >
+        <h2 class="text-xl font-bold text-white mb-2">
+          Software Stack & Image Processing
+        </h2>
+        <p class="text-xs text-slate-400 max-w-xl mx-auto mb-6">
+          Capture automation and guiding controlled via ZWO ASIAIR Plus. Stacking, calibration, and image post-processing carried out exclusively in PixInsight.
+        </p>
+        <div class="flex flex-wrap justify-center gap-3 text-xs font-mono">
+          <span
+            class="px-4 py-2 rounded-xl bg-slate-900 border border-slate-800 text-purple-300"
+            >ZWO ASIAIR Plus Smart Controller</span
+          >
+          <span
+            class="px-4 py-2 rounded-xl bg-slate-900 border border-slate-800 text-cyan-300"
+            >PixInsight (BlurXTerminator / StarXTerminator / SPCC)</span
+          >
+        </div>
+      </div>
+    </section>
+  </div>
+</Layout>

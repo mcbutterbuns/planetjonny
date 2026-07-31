@@ -1,0 +1,76 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection, render } from 'astro:content';
+import { Image } from 'astro:assets';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map((post) => ({
+    params: { id: post.id },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { title, pubDate, description, author, coverImage, tags, readTime } = post.data;
+const { Content } = await render(post);
+---
+
+<Layout title={`${title} - PlanetJonny Astrophotography Blog`} description={description}>
+  
+  <article class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    
+    <!-- Back to Blog Link -->
+    <div class="mb-8">
+      <a href="/blog" class="inline-flex items-center space-x-2 text-xs font-mono text-cyan-400 hover:text-cyan-300 transition-colors">
+        <span>← Back to Articles & Field Logs</span>
+      </a>
+    </div>
+
+    <!-- Article Header -->
+    <header class="mb-10 text-center">
+      <div class="flex items-center justify-center space-x-3 text-xs font-mono text-slate-400 mb-4">
+        <span class="text-cyan-400">✍️ {author}</span>
+        <span>•</span>
+        <span>📅 {pubDate}</span>
+        <span>•</span>
+        <span>⏱️ {readTime}</span>
+      </div>
+
+      <h1 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight mb-6">{title}</h1>
+
+      <p class="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed mb-6">
+        {description}
+      </p>
+
+      <!-- Tags -->
+      <div class="flex flex-wrap justify-center gap-2">
+        {tags.map((tag) => (
+          <span class="px-3 py-1 rounded-full text-xs font-mono bg-cyan-500/10 text-cyan-300 border border-cyan-500/30">
+            #{tag}
+          </span>
+        ))}
+      </div>
+    </header>
+
+    <!-- Cover Image -->
+    {coverImage && (
+      <div class="relative rounded-3xl overflow-hidden glass-panel border border-white/10 shadow-2xl mb-12 bg-slate-950">
+        <Image 
+          src={coverImage} 
+          alt={title}
+          width={1200}
+          height={675}
+          class="w-full h-auto max-h-[60vh] object-cover"
+        />
+      </div>
+    )}
+
+    <!-- Article Content -->
+    <div class="p-8 sm:p-12 rounded-3xl glass-panel border border-white/10 prose prose-invert max-w-none text-slate-300 leading-relaxed text-sm sm:text-base prose-h3:mt-12 prose-h3:mb-6 prose-p:my-6 prose-hr:my-12 prose-ul:my-6 prose-li:my-3">
+      <Content />
+    </div>
+
+  </article>
+
+</Layout>
