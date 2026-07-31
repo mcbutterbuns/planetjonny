@@ -12,11 +12,11 @@ export async function getStaticPaths() {
 }
 
 const { photo } = Astro.props;
-const { title, catalogId, category, coverImage, captureDate, location, bortleClass, constellation, equipment, acquisition } = photo.data;
+const { title, catalogId, category, coverImage, captureDate, location, constellation, equipment, acquisition } = photo.data;
 const { Content } = await render(photo);
 ---
 
-<Layout title={`${title} (${catalogId}) - PlanetJonny Astrophotography`} description={`Acquisition details and high-resolution astrophotography capture for ${title}. Integrated for ${acquisition.totalIntegration} from Bortle ${bortleClass} skies.`}>
+<Layout title={`${title} (${catalogId}) - PlanetJonny Astrophotography`} description={`Acquisition details and high-resolution astrophotography capture for ${title}. Integrated for ${acquisition.totalIntegration}.`}>
   
   <article class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
     
@@ -35,9 +35,6 @@ const { Content } = await render(photo);
         </span>
         <span class="px-3 py-1 rounded-full text-xs font-mono bg-slate-900 border border-slate-800 text-slate-300">
           {constellation} Constellation
-        </span>
-        <span class="px-3 py-1 rounded-full text-xs font-mono bg-slate-900 border border-slate-800 text-slate-300">
-          Bortle {bortleClass} Site
         </span>
       </div>
 

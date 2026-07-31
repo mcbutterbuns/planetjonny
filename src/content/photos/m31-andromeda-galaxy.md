@@ -5,7 +5,6 @@ category: "Deep Sky"
 coverImage: "../../assets/photos/m31-2024.jpg"
 captureDate: "2024-09-29"
 location: "Eugene, OR"
-bortleClass: 6
 constellation: "Andromeda"
 equipment:
   telescope: "Sky-Watcher Evostar 80ED Pro"
@@ -28,4 +27,4 @@ The Andromeda Galaxy (M31) is our nearest major spiral galaxy neighbor, located 
 
 ### Target Details & Notes
 
-Captured over a few nights starting September 29, 2024 using my Sky-Watcher 80ED Pro refractor from Eugene, Oregon (Bortle 6). This image is a 2-panel mosaic composite stitched together and processed in PixInsight to capture the full disc, outer dust lanes, and satellite galaxies M32 and M110.
+Captured over a few nights starting September 29, 2024 using my Sky-Watcher 80ED Pro refractor from Eugene, Oregon. This image is a 2-panel mosaic composite stitched together and processed in PixInsight to capture the full disc, outer dust lanes, and satellite galaxies M32 and M110.

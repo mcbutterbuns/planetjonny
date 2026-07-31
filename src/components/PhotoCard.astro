@@ -10,7 +10,6 @@ interface Props {
       category: string;
       coverImage: any;
       captureDate: string;
-      bortleClass: number;
       constellation: string;
       acquisition: {
         totalIntegration: string;
@@ -20,7 +19,7 @@ interface Props {
 }
 
 const { photo } = Astro.props;
-const { title, catalogId, category, coverImage, bortleClass, acquisition } = photo.data;
+const { title, catalogId, category, coverImage, acquisition } = photo.data;
 ---
 
 <a 
@@ -57,7 +56,6 @@ const { title, catalogId, category, coverImage, bortleClass, acquisition } = pho
   <div class="p-5">
     <div class="flex items-center justify-between text-xs font-mono text-cyan-400 mb-1">
       <span>{catalogId}</span>
-      <span class="text-slate-400">Bortle {bortleClass}</span>
     </div>
     <h3 class="text-lg font-bold text-white group-hover:text-cyan-300 transition-colors">
       {title}

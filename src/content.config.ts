@@ -11,7 +11,6 @@ const photos = defineCollection({
       coverImage: image(),
       captureDate: z.string(),
       location: z.string(),
-      bortleClass: z.number().min(1).max(9),
       constellation: z.string(),
       equipment: z.object({
         telescope: z.string(),

@@ -5,7 +5,6 @@ category: "Deep Sky"
 coverImage: "../../assets/photos/ic-1396.png"
 captureDate: "2026-07-03"
 location: "Eugene, OR"
-bortleClass: 6
 constellation: "Cepheus"
 equipment:
   telescope: "Apertura Carbonstar 150"

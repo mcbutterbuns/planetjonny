@@ -5,7 +5,6 @@ category: "Deep Sky"
 coverImage: "../../assets/photos/ngc-6960.png"
 captureDate: "2026-07-09"
 location: "Eugene, OR"
-bortleClass: 6
 constellation: "Cygnus"
 equipment:
   telescope: "Apertura Carbonstar 150"
